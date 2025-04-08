@@ -1,6 +1,0 @@
-[build]
-  command = "CI=false npm run build"
-  publish = "dist"
-
-[context.production.environment]
-  NODE_VERSION = "16"  # O la versión compatible con tu proyecto
