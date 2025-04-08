@@ -1,0 +1,508 @@
+@import './base/base.css';
+@import './base/reset.css';
+@import './base/typography.css';
+@import './components/buttons.css';
+@import './components/icons.css';
+@import './components/room.css';
+@import './layout/layout.css';
+@import './utilities/helpers.css';
+@import './utilities/variables.css';
+
+/* ========== 7. Animaciones ========== */
+
+@keyframes ericBackgroundAnimation {
+  0% {
+    background: linear-gradient(137deg, #e0f7fa, #ffecb3, #f3e5f5);
+    /* Azul suave, beige claro, lavanda */
+  }
+
+  25% {
+    background: linear-gradient(137deg, #ffe0b2, #ffccbc, #d1c4e9);
+    /* Tonos de beige y púrpura claro */
+  }
+
+  50% {
+    background: linear-gradient(137deg, #b2ebf2, #c8e6c9, #f8bbd0);
+    /* Azul claro, verde suave, rosa pastel */
+  }
+
+  75% {
+    background: linear-gradient(137deg, #fff9c4, #f0f4c3, #e1bee7);
+    /* Amarillo claro, verde suave, púrpura suave */
+  }
+
+  100% {
+    background: linear-gradient(137deg, #e0f7fa, #ffecb3, #f3e5f5);
+    /* Regresa a azul claro, beige, lavanda */
+  }
+}
+
+@keyframes animate {
+
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #a285d1;
+    /* Un tono lila que combina con la imagen */
+    text-shadow: none;
+  }
+
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #a285d1,
+      0 0 20px #a285d1,
+      0 0 40px #a285d1,
+      0 0 80px #a285d1,
+      0 0 160px #a285d1;
+  }
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ========== 10. Enlaces Sociales ========== */
+.social-links {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  display: flex;
+  gap: 50px;
+}
+
+.social-links a img:hover {
+  transform: scale(1.1);
+}
+
+/* ========== 11. Contenido Principal (boxes, secciones, etc.) ========== */
+
+.content-profile-riddle {
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+}
+
+.content-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.animate-title {
+  animation: animate 5s linear infinite;
+}
+
+.animate-description {
+  white-space: nowrap;
+  /* border-right: 4px solid; */
+  width: 13ch;
+  color: #a285d1;
+  /* display: block; */
+
+  /* animation: typing 5s steps(12), blinks .5s infinite step-end alternate; */
+  overflow: hidden;
+}
+
+
+.box-experience-education,
+.box-projects {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.box-experience,
+.box-education,
+.box-project,
+.box-tech,
+.box-spotify,
+.box-books {
+  overflow: hidden;
+  padding: 15px;
+  border-radius: 10px;
+  transition: background-color var(--transition-speed);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: hsla(0, 0%, 100%, .1);
+  outline-color: #1a1a1a;
+  color: var(--text-primary);
+  background-color: var(--cards);
+}
+
+/* .box-experience,
+.box-education {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-color: #a285d1;
+  scrollbar-width: thin;
+} */
+
+.box-experience-items, .box-education-items{
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-color: #a285d1;
+  scrollbar-width: thin;}
+
+
+/* .box-experience, */
+/* .box-education, */
+.box-project,
+.box-tech,
+.box-media {
+  height: 350px;
+}
+
+.box-image {
+  padding-top: 20px;
+}
+
+.box-image img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Boxes para Spotify y libros */
+.box-media {
+  display: grid;
+  grid-template-rows: 1.2fr 2fr;
+  gap: 10px;
+}
+
+.box-books {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* ========== 12. Carrusel de Libros ========== */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  width: max-content;
+}
+
+.carousel-track a {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.carousel-track img {
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform-origin: left center;
+}
+
+.carousel-container:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+.carousel-track img:hover {
+  cursor: pointer;
+  transform: rotateY(-28deg) rotateZ(-2deg) scale(1.05);
+  box-shadow: 1px 3px 2px #eaeaee, 20px 8px 0 rgba(243, 243, 245, 0.7);
+}
+
+/* ========== 13. Secciones de Tecnologías y Stack ========== */
+.box-tech-categorys {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.box-tech-categorys img {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 90%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.box-tech-categorys:hover img {
+  opacity: 0.2;
+}
+
+.box-tech-categorys:hover .middle {
+  opacity: 1;
+}
+
+.view-overlay {
+  background-color: #a285d1;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.category {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frameworks .icon-background {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: url('../images/framework.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.1;
+}
+
+.programming-languages .icon-background {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: url('../images/language.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.1;
+}
+
+.tools-platforms .icon-background {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: url('../images/tool.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.1;
+}
+
+/* ========== 14. Carrusel de Tecnologías ========== */
+.carousel-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.card i {
+  font-size: 2rem;
+  color: black;
+}
+
+.odd {
+  animation: scroll-left 10s linear infinite;
+}
+
+.even {
+  animation: scroll-right 10s linear infinite;
+}
+
+/* ========== 15. Elementos Responsivos (Media Queries) ========== */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 15px;
+    z-index: 2;
+  }
+
+  .sidebar {
+    width: 220px;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+    opacity: 1;
+    height: 100%;
+    padding-top: 50px;
+  }
+
+  .content {
+    padding: 70px 20px 20px 20px;
+  }
+
+  .box-experience,
+  .box-education,
+  .box-project,
+  .box-tech,
+  .box-media {
+    width: calc(100vw - 40px);
+  }
+
+  .icon-wrapper {
+    width: 100%;
+  }
+
+  .icon-title {
+    opacity: 1;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* ========== 16. Selector de Idioma ========== */
+.language-selector {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.selected-language img {
+  width: 60px;
+}
+
+.language-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 50px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.language-options div:hover {
+  background-color: #e0e0e0;
+}
+
+.language-options img {
+  width: 30px;
+}
+
+.show-options .language-options {
+  display: block;
+}
+
+/* ========== 17. Elementos de Caja (box-title, box-item) ========== */
+.box-title {
+  border: 2px;
+  border-radius: 20px;
+  padding: 10px 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: min-content;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.box-title img {
+  height: 25px;
+  width: 25px;
+}
+
+.box-item {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 10fr 3fr;
+  gap: 10px;
+}
+
+.box-item-desc {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.box-item-image {
+  display: flex;
+  align-items: center;
+}
+
+.box-item .date {
+  display: flex;
+  align-items: end;
+}
+
+@media (max-width: 1450px) {
+.content-riddle{
+  display: none;
+}
+}
