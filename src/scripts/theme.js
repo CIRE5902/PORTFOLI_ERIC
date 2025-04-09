@@ -24,3 +24,4 @@ const themeMap = {
   
   document.getElementById('themeButton').onclick = toggleTheme;
   
+  console.log("hola");
