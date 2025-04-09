@@ -42,60 +42,50 @@
 
 <style>
   .box-media {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-    background-color: var(--bg-secondary);
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
+  display: grid;
+  grid-template-rows: 1.2fr 2fr;
+  gap: 10px;
+}
 
-  .box-spotify iframe {
-    width: 100%;
-    max-width: 500px;
-    height: 80px;
-    border-radius: 12px;
-  }
+.box-books {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
 
-  .box-books {
-    overflow: hidden;
-  }
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
-  .carousel-container {
-    width: 100%;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding-bottom: 0.5rem;
-  }
+.carousel-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  width: max-content;
+}
 
-  .carousel-track {
-    display: flex;
-    gap: 1rem;
-    min-width: fit-content;
-  }
+.carousel-track a {
+  display: inline-block;
+  padding: 0 20px;
+}
 
-  .carousel-track a img {
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-  }
+.carousel-track img {
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform-origin: left center;
+}
 
-  .carousel-track a img:hover {
-    transform: scale(1.05);
-  }
+.carousel-container:hover .carousel-track {
+  animation-play-state: paused;
+}
 
-  /* Opcional: Scrollbar personalizada */
-  .carousel-container::-webkit-scrollbar {
-    height: 6px;
-  }
+.carousel-track img:hover {
+  cursor: pointer;
+  transform: rotateY(-28deg) rotateZ(-2deg) scale(1.05);
+  box-shadow: 1px 3px 2px #eaeaee, 20px 8px 0 rgba(243, 243, 245, 0.7);
+}
 
-  .carousel-container::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-    border-radius: 3px;
-  }
-
-  .carousel-container::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
 </style>
