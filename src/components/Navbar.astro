@@ -12,7 +12,7 @@
 
     <li class="nav-item">
       <a href="#" class="nav-link">
-        <img src="/images/avatar.png" alt="Inicio Icon" class="nav-icon">
+        <img src="/images/avatar.png" alt="Inicio Icon" class="nav-icon" />
         <span class="link-text" id="menu-home">Home</span>
       </a>
     </li>
@@ -56,11 +56,99 @@
 
     <li class="nav-item" id="themeButton">
       <a href="#" class="nav-link">
-        <img src=\"/images/moon.png\" alt=\"Moon Stars Icon\" class=\"theme-icon\" id=\"darkIcon\">
-        <img src=\"/images/sun.svg\" alt=\"Sun Icon\" class=\"theme-icon\" id=\"lightIcon\">
-        <img src=\"/images/gem.svg\" alt=\"Gem Icon\" class=\"theme-icon\" id=\"ericIcon\">
-        <span class=\"link-text\">Theme</span>
+        <img src="/images/moon.png" alt="Moon Stars Icon" class="theme-icon" id="darkIcon" />
+        <img src="/images/sun.svg" alt="Sun Icon" class="theme-icon" id="lightIcon" />
+        <img src="/images/gem.svg" alt="Gem Icon" class="theme-icon" id="ericIcon" />
+        <span class="link-text">Theme</span>
       </a>
     </li>
   </ul>
 </nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100vh;
+    background-color: var(--bg-header);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .nav-item,
+  .logo {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .nav-link:hover {
+    background-color: var(--bg-hover);
+  }
+
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 0.3rem;
+  }
+
+  .theme-icon {
+    display: none;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 0.3rem;
+  }
+
+  #darkIcon,
+  #lightIcon,
+  #ericIcon {
+    display: none;
+  }
+
+  .link-text {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .logo-text {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .logo .nav-link {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  @media (min-width: 768px) {
+    .navbar {
+      width: 100px;
+    }
+
+    .link-text {
+      font-size: 0.85rem;
+    }
+  }
+</style>

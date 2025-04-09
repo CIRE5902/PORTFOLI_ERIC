@@ -39,3 +39,63 @@
     </div>
   </div>
 </div>
+
+<style>
+  .box-media {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .box-spotify iframe {
+    width: 100%;
+    max-width: 500px;
+    height: 80px;
+    border-radius: 12px;
+  }
+
+  .box-books {
+    overflow: hidden;
+  }
+
+  .carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 0.5rem;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1rem;
+    min-width: fit-content;
+  }
+
+  .carousel-track a img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+  }
+
+  .carousel-track a img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Opcional: Scrollbar personalizada */
+  .carousel-container::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .carousel-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 3px;
+  }
+
+  .carousel-container::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+</style>

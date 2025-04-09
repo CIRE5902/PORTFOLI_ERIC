@@ -12,3 +12,80 @@
     </div>
   </div>
 </div>
+
+<style>
+  .box-tech {
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .box-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .box-title svg {
+    color: var(--primary-color);
+  }
+
+  .box-title h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .box-tech-categorys {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .box-tech-categorys img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .box-tech-categorys:hover img {
+    transform: scale(1.05);
+  }
+
+  .middle {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box-tech-categorys:hover .middle {
+    opacity: 1;
+  }
+
+  .view-overlay {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+</style>
