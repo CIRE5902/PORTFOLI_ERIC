@@ -9,6 +9,89 @@ import Media from '../components/Media.astro';
 import Stack from '../components/Stack.astro';
 ---
 
+<style>
+  @import '../css/base/base.css';
+  @import '../css/base/reset.css';
+  @import '../css/base/typography.css';
+  @import '../css/components/buttons.css';
+  @import '../css/components/icons.css';
+  @import '../css/layout/layout.css';
+  @import '../css/utilities/helpers.css';
+  @import '../css/utilities/variables.css';
+
+  @keyframes ericBackgroundAnimation {
+    0% {
+      background: linear-gradient(137deg, #e0f7fa, #ffecb3, #f3e5f5);
+    }
+    25% {
+      background: linear-gradient(137deg, #ffe0b2, #ffccbc, #d1c4e9);
+    }
+    50% {
+      background: linear-gradient(137deg, #b2ebf2, #c8e6c9, #f8bbd0);
+    }
+    75% {
+      background: linear-gradient(137deg, #fff9c4, #f0f4c3, #e1bee7);
+    }
+    100% {
+      background: linear-gradient(137deg, #e0f7fa, #ffecb3, #f3e5f5);
+    }
+  }
+
+  @keyframes animate {
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+      color: #a285d1;
+      text-shadow: none;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+      color: #fff;
+      text-shadow: 0 0 10px #a285d1,
+                   0 0 20px #a285d1,
+                   0 0 40px #a285d1,
+                   0 0 80px #a285d1,
+                   0 0 160px #a285d1;
+    }
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  @keyframes scroll-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .animate-title {
+    animation: animate 5s linear infinite;
+  }
+
+  .animate-description {
+    white-space: nowrap;
+    width: 13ch;
+    color: #a285d1;
+    overflow: hidden;
+  }
+
+  .box-experience-education {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+  }
+
+  @media (max-width: 1450px) {
+    .content-riddle {
+      display: none;
+    }
+  }
+</style>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
