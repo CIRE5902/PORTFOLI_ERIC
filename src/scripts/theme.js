@@ -1,13 +1,16 @@
 const themeMap = {
-    dark: "light", 
-    light: "eric", 
-    eric: "dark"   
+    dark: "light",
+    light: "eric",
+    eric: "dark"
   };
   
-  const theme = localStorage.getItem('theme')
-    || (tmp = Object.keys(themeMap)[0],
-      localStorage.setItem('theme', tmp),
-      tmp);
+  let theme = localStorage.getItem('theme');
+  if (!theme) {
+    const tmp = Object.keys(themeMap)[0];
+    localStorage.setItem('theme', tmp);
+    theme = tmp;
+  }
+  
   const bodyClass = document.body.classList;
   bodyClass.add(theme);
   
@@ -16,12 +19,15 @@ const themeMap = {
     event.preventDefault();
   
     const current = localStorage.getItem('theme');
-    const next = themeMap[current];
+    if (!current) return;
   
+    const next = themeMap[current];
     bodyClass.replace(current, next);
     localStorage.setItem('theme', next);
   }
   
-  document.getElementById('themeButton').onclick = toggleTheme;
+  const themeButton = document.getElementById('themeButton');
+  if (themeButton) {
+    themeButton.addEventListener('click', toggleTheme);
+  }
   
-  console.log("hola");

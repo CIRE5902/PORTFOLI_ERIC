@@ -2,7 +2,9 @@
 import Navbar from '../components/Navbar.astro';
 import LanguageSelector from '../components/LanguageSelector.astro';
 
-// import ProfileRiddle from '../components/ProfileRiddle.astro';
+import Profile from '../components/Profile.astro';
+import Riddle from '../components/Riddle.astro';
+
 // import Experience from '../components/Experience.astro';
 // import Education from '../components/Education.astro';
 // import Projects from '../components/Projects.astro';
@@ -15,6 +17,11 @@ import '../styles/global.css';
 
 
 <style>
+
+.content-profile-riddle {
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+}
   /* @import '../css/base/base.css';
   @import '../css/base/reset.css';
   @import '../css/base/typography.css';
@@ -104,15 +111,17 @@ import '../styles/global.css';
     <title>Eric Pérez Vera – Portfolio</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../scrips/theme.js"></script>
   </head>
   <body>
     <LanguageSelector />
     <Navbar />
 
-    <main>
-      <!-- <ProfileRiddle />
-      <div class="box-experience-education">
+    <main class="content">
+      <div class="content-profile-riddle">
+        <Profile />
+        <Riddle />
+      </div>
+      <!-- <div class="box-experience-education">
         <Experience />
         <Education />
       </div>
