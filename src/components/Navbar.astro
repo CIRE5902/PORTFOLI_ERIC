@@ -266,37 +266,4 @@
   }
 </style>
 
-<script type="module">
-  const themeMap: Record<string, string> = {
-    dark: "light",
-    light: "eric",
-    eric: "dark"
-  };
-
-  let tmp: string;
-
-  const theme: string = localStorage.getItem('theme')
-    || ((tmp = Object.keys(themeMap)[0]),
-        localStorage.setItem('theme', tmp),
-        tmp);
-
-  const bodyClass: DOMTokenList = document.body.classList;
-  bodyClass.add(theme);
-
-  function toggleTheme(event: MouseEvent): void {
-    console.log("hola");
-    event.preventDefault();
-
-    const current = localStorage.getItem('theme');
-    if (!current) return;
-
-    const next = themeMap[current];
-    bodyClass.replace(current, next);
-    localStorage.setItem('theme', next);
-  }
-
-  const themeButton = document.getElementById('themeButton');
-  if (themeButton) {
-    themeButton.addEventListener('click', toggleTheme);
-  }
-</script>
+<script src="../scrips/theme.js"></script>
